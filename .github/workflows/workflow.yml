@@ -7,9 +7,11 @@ jobs:
   create-artifact:
     runs-on: ubuntu-latest
     steps:
+      # Add a step to checkout the code
+      - uses: actions/checkout@v7
       - name: Create a file
-        run: echo "This is a test file" > test.txt
-      - name: Create an artifact
+        run: echo "This is a a test file" > test.txt
+      - name: Create a artifact
         uses: actions/upload-artifact@v2
         with:
           name: my-artifact
