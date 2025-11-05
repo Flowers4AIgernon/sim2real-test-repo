@@ -1,0 +1,16 @@
+name: Create Artifact
+on:
+  push:
+    branches:
+      - main
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a file
+        run: echo "This is a test file" > test.txt
+      - name: Create an artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: test.txt
